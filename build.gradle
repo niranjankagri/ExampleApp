@@ -15,9 +15,9 @@ plugins {
 }
 
 repositories {
-    // Use jcenter for resolving your dependencies.
+    // Resolve dependencies from Maven Central.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    mavenCentral()
 } 
 
 dependencies {
@@ -33,11 +33,13 @@ test {
 	}
 }
 
+mainClassName = 'main.java.ExampleApp.Main'
+
 jar {
 	manifest {
-		attributes 'Main-Class': 'main.java.ExampleApp.Main'
+		attributes 'Main-Class': mainClassName
 	}
 }
 
 // Define the main class for the application
-mainClassName = 'ExampleApp.Main'
+
